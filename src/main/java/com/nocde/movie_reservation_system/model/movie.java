@@ -1,4 +1,4 @@
-package com.nocde.movie_reservation_system.movie;
+package com.nocde.movie_reservation_system.model;
 
 public class movie {
     private Long id;
