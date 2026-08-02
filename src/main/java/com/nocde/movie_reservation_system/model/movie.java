@@ -1,5 +1,9 @@
 package com.nocde.movie_reservation_system.model;
 
+/*
+This class creates information for a particular movie. Using a Long id.
+*/
+
 public class movie {
     private Long id;
     private String title;

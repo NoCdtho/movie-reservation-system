@@ -1,7 +1,11 @@
 package com.nocde.movie_reservation_system.model;
 
+/*
+This class used to create information for a particular movie.
+*/
+
 public class showTime {
-     private Long id;
+    private Long id;
     private Long movieId;
     private String theater;
     private String startTime;
