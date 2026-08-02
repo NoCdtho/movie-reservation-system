@@ -1,6 +1,6 @@
 This is a movie reservation E2E system.
 
-List of dependencies :
+## List of dependencies :
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -11,7 +11,7 @@ List of dependencies :
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
 
-file structure:
+## file structure:
     src
         main
             java\com\nocde\movie_reservation_system
@@ -21,7 +21,7 @@ file structure:
                 resources
             test
 
-models for the entities are:
+## Java models for the entities are:
     booking
     movie
     showTime
