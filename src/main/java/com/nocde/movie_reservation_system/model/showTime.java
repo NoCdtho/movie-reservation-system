@@ -1,35 +1,53 @@
 package com.nocde.movie_reservation_system.model;
+import jakarta.persistence.*;
+import java.time.*;
+import java.math.BigDecimal;
 
-/*
-This class used to create information for a particular movie.
-*/
+@Entity
+
+@Table(name = "showtime")
 
 public class showTime {
-    private Long id;
-    private Long movieId;
-    private String theater;
-    private String startTime;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name  = "showtime_id", nullable = false)
+    private Integer showTimeId;
 
-    public showTime(Long id, Long movieId, String theater, String startTime) {
-        this.id = id;
-        this.movieId = movieId;
-        this.theater = theater;
-        this.startTime = startTime;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "movie_id", nullable = false)
+    private movie movieId;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "start_time", nullable = false)
+    private LocalDateTime startTime;
 
-    public Long getMovieId() {
-        return movieId;
-    }
+    @Column(name = "end_time", nullable = false)
+    private LocalDateTime endTime;
 
-    public String getTheater() {
-        return theater;
-    }
+    @Column(name = "price", nullable = false, precision = 8, scale = 2)
+    private BigDecimal price;
 
-    public String getStartTime() {
-        return startTime;
-    }
+
+    
+    // public showTime(Long id, Long movieId, String theater, String startTime) {
+    //     this.id = id;
+    //     this.movieId = movieId;
+    //     this.theater = theater;
+    //     this.startTime = startTime;
+    // }
+
+    // public Long getId() {
+    //     return id;
+    // }
+
+    // public Long getMovieId() {
+    //     return movieId;
+    // }
+
+    // public String getTheater() {
+    //     return theater;
+    // }
+
+    // public String getStartTime() {
+    //     return startTime;
+    // }
 }
