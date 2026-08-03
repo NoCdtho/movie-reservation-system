@@ -1,34 +1,49 @@
 package com.nocde.movie_reservation_system.model;
 
-/*
-This class creates information for a particular movie. Using a Long id.
-*/
+import jakarta.persistence.*;
+import java.time.*;
+
+@Entity
+
+@Table(name = "movie")
 
 public class movie {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movie_id")
+    private Integer id;
+
+    @Column(name = "title", nullable = false, length = 150)
     private String title;
-    private String genre;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "duration_mins")
     private int duration;
 
-    public movie(Long id, String title, String genre, int duration) {
-        this.id = id;
-        this.title = title;
-        this.genre = genre;
-        this.duration = duration;
-    }
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "release_date")
+    private LocalDate releaseDate;
 
-    public String getTitle() {
-        return title;
-    }
+    // public movie(Long id, String title, String genre, int duration) {
+    //     this.id = id;
+    //     this.title = title;
+    //     this.genre = genre;
+    //     this.duration = duration;
+    // }
+    // public Long getId() {
+    //     return id;
+    // }
 
-    public String getGenre() {
-        return genre;
-    }
+    // public String getTitle() {
+    //     return title;
+    // }
 
-    public int getDuration() {
-        return duration;
-    }
+    // public String getGenre() {
+    //     return genre;
+    // }
+
+    // public int getDuration() {
+    //     return duration;
+    // }
 }
