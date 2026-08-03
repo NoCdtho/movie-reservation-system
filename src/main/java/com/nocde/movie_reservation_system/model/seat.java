@@ -19,4 +19,25 @@ public class seat {
 
     @Column(name = "seat_number", nullable = false)
     private Integer seatNumber;
+
+
+    seat(){}
+
+    seat(Integer seatId, String seatRow, Integer seatNumber){
+        this.seatId = seatId;
+        this.seatRow = seatRow;
+        this.seatNumber = seatNumber;
+    }
+
+    public Integer getSeatId(){
+        return seatId;
+    }
+
+    public String getseatRow(){
+        return seatRow;
+    }
+
+    public Integer getseatNumber(){
+        return seatNumber;
+    }
 }
