@@ -11,7 +11,7 @@ public class movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movie_id")
-    private Integer id;
+    private Integer movieId;
 
     @Column(name = "title", nullable = false, length = 150)
     private String title;
@@ -20,30 +20,38 @@ public class movie {
     private String description;
 
     @Column(name = "duration_mins")
-    private int duration;
+    private Integer durationMins;
 
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
-    // public movie(Long id, String title, String genre, int duration) {
-    //     this.id = id;
-    //     this.title = title;
-    //     this.genre = genre;
-    //     this.duration = duration;
-    // }
-    // public Long getId() {
-    //     return id;
-    // }
+    movie(){}
 
-    // public String getTitle() {
-    //     return title;
-    // }
+    public movie(Integer movieId, String title, String description, Integer durationMins, LocalDate releaseDate) {
+        this.movieId = movieId;
+        this.title = title;
+        this.title = title;
+        this.durationMins = durationMins;
+        this.releaseDate = releaseDate;
+    }
 
-    // public String getGenre() {
-    //     return genre;
-    // }
+    public Integer getId() {
+        return movieId;
+    }
 
-    // public int getDuration() {
-    //     return duration;
-    // }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getDuration() {
+        return durationMins;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }  
 }
