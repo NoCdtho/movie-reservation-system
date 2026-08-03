@@ -26,28 +26,33 @@ public class showTime {
     @Column(name = "price", nullable = false, precision = 8, scale = 2)
     private BigDecimal price;
 
-
+    public showTime(){}
     
-    // public showTime(Long id, Long movieId, String theater, String startTime) {
-    //     this.id = id;
-    //     this.movieId = movieId;
-    //     this.theater = theater;
-    //     this.startTime = startTime;
-    // }
+    public showTime(Integer showTimeId, movie movieId, LocalDateTime startTime, LocalDateTime endTime, BigDecimal price) {
+        this.showTimeId = showTimeId;
+        this.movieId = movieId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.price = price;
+    }
 
-    // public Long getId() {
-    //     return id;
-    // }
+    public Integer getShowTimeId() {
+        return showTimeId;
+    }
 
-    // public Long getMovieId() {
-    //     return movieId;
-    // }
+    public movie getMovieId() {
+        return movieId;
+    }
 
-    // public String getTheater() {
-    //     return theater;
-    // }
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
 
-    // public String getStartTime() {
-    //     return startTime;
-    // }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public BigDecimal getPrice(){
+        return price;
+    }
 }
