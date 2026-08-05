@@ -41,4 +41,31 @@ public class user {
         columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
     )
     private LocalDateTime createdTime;
+
+    // Empty Constructors
+    user(){}
+    
+    user(Integer userId, String userName, String email, LocalDateTime createdTime){
+        this.userId = userId;
+        this.userName = userName;
+        this.email = email;
+        this.createdTime = createdTime;
+    }
+
+    // getters
+    public Integer id(){
+        return userId;
+    }
+
+    public String userName(){
+        return userName;
+    }
+
+    public String email(){
+        return email;
+    }
+
+    public LocalDateTime createdTime(){
+        return createdTime;
+    }
 }
