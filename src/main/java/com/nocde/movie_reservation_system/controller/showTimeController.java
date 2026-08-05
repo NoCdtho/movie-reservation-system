@@ -9,17 +9,17 @@ import java.util.List;
 @RequestMapping("showTimes")
 public class showTimeController {
 
-    @GetMapping
-    public List<showTime> getAllShowtimes() {
-        return List.of(
-                new showTime(1L, 1L, "Screen 1", "2026-07-17T10:00"),
-                new showTime(1L, 2L, "Screen 2", "2026-07-17T14:00"),
-                new showTime(3L, 2L, "Screen 3", "2026-07-17T18:30")
-        );
-    }
+    // @GetMapping
+    // public List<showTime> getAllShowtimes() {
+    //     return List.of(
+    //             new showTime(1L, 1L, "Screen 1", "2026-07-17T10:00"),
+    //             new showTime(1L, 2L, "Screen 2", "2026-07-17T14:00"),
+    //             new showTime(3L, 2L, "Screen 3", "2026-07-17T18:30")
+    //     );
+    // }
     
-    @GetMapping("/{id}")
-    public showTime getShowtimeById(@PathVariable Long id) {
-        return new showTime(id, 1L, "Screen 1", "2026-07-17T10:00");
-    }
+    // @GetMapping("/{id}")
+    // public showTime getShowtimeById(@PathVariable Long id) {
+    //     return new showTime(id, 1L, "Screen 1", "2026-07-17T10:00");
+    // }
 }
