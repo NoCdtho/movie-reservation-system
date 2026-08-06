@@ -10,7 +10,7 @@ import java.time.*;
     name = "users"
 )
 
-public class user {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
@@ -43,9 +43,9 @@ public class user {
     private LocalDateTime createdTime;
 
     // Empty Constructors
-    user(){}
+    User(){}
     
-    user(Integer userId, String userName, String email, LocalDateTime createdTime){
+    User(Integer userId, String userName, String email, LocalDateTime createdTime){
         this.userId = userId;
         this.userName = userName;
         this.email = email;
@@ -53,19 +53,33 @@ public class user {
     }
 
     // getters
-    public Integer id(){
+    public Integer getId(){
         return userId;
     }
 
-    public String userName(){
+    public String getUserName(){
         return userName;
     }
 
-    public String email(){
+    public String getEmail(){
         return email;
     }
 
-    public LocalDateTime createdTime(){
+    public LocalDateTime getCreatedTime(){
         return createdTime;
+    }
+
+    //Setters 
+    public void setId(Integer Id){
+        this.userId = Id;
+    }
+    public void setUserName(String userName){
+        this.userName = userName;
+    }
+    public void setEmal(String email){
+        this.email = email;
+    }
+    public void setCreatedTime(LocalDateTime createdTime){
+        this.createdTime = createdTime;
     }
 }
