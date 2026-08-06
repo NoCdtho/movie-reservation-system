@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class booking {
     @ManyToOne(fetch = FetchType.LAZY) //enable them to only send data when they are called
     @JoinColumn(name = "user_id", nullable = false) //used to specify foreign key column that connects other columns in a relationship
-    private user userId;
+    private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY) //same only send data when showtime is called
     @JoinColumn(name = "showtime_id", nullable = false) //same specifies a foreign key
@@ -40,7 +40,7 @@ public class booking {
 
     booking(){}
 
-    booking(user userId, showTime showTimeId, LocalDateTime bookingTime, bookingStatus status, seat seatId, Integer bookingId, String bookingReference){
+    booking(User userId, showTime showTimeId, LocalDateTime bookingTime, bookingStatus status, seat seatId, Integer bookingId, String bookingReference){
         this.userId = userId;
         this.showTimeId = showTimeId;
         this.bookingTime = bookingTime;

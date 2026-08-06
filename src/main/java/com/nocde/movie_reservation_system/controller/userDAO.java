@@ -1,12 +1,12 @@
 package com.nocde.movie_reservation_system.controller;
 
 import java.util.List;
-import com.nocde.movie_reservation_system.model.user;
+import com.nocde.movie_reservation_system.model.User;
 
 public interface userDAO{
-    void addUser(user user);
-    user getUserId(int id);
-    List<user> getAllUser();
-    void updateUser(user user);
-    void deleteClient(int id);
+    void addUser(User user);
+    User getUserId(int id);
+    List<User> getAllUser();
+    void updateUser(User user);
+    void deleteUser(int id);
 }

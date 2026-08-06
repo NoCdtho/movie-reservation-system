@@ -43,7 +43,7 @@ public class User {
     private LocalDateTime createdTime;
 
     // Empty Constructors
-    User(){}
+    public User(){}
     
     User(Integer userId, String userName, String email, LocalDateTime createdTime){
         this.userId = userId;
@@ -76,7 +76,7 @@ public class User {
     public void setUserName(String userName){
         this.userName = userName;
     }
-    public void setEmal(String email){
+    public void setEmail(String email){
         this.email = email;
     }
     public void setCreatedTime(LocalDateTime createdTime){
