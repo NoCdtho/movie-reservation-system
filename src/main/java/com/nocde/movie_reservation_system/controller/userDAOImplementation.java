@@ -27,14 +27,15 @@ public class userDAOImplementation implements userDAO{
     public User getUserId(int id){
         String sql = "SELECT * FROM users WHERE id = ?";
         User user = null;
+        // This is a try-with-resouce block unique thing is as the try block ends this calls the close functions of the connections 
         try(
             Connection connection = databaseManager.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql)
         ){
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, id); //This line puts (int id) in place of ? 
             ResultSet result = preparedStatement.executeQuery();
 
-            // mapp back to the java model from database
+            // This if block map back to the last updated data back to the java model from database.
             if(result.next()){
                 user = new User();
                 user.setId(result.getInt("user_id"));
@@ -47,5 +48,30 @@ public class userDAOImplementation implements userDAO{
             e.printStackTrace();
         }
         return user;
+    }
+
+    @Override 
+    public List<User> getAllUser(){
+        String sql = "SELECT * FROM user";
+        List<User> list = new ArrayList<>();
+
+        try(
+            Connection con = databaseManager.getConnection();
+            PreparedStatement pstm = con.prepareStatement(sql);
+            ResultSet result = pstm.executeQuery();
+        ){
+            while(result.next()){
+                User user = new User();
+                user.setId(result.getInt("user_id"));
+                user.setUserName(result.getString("user_name"));
+                user.setEmail(result.getString("email"));
+                user.setCreatedTime(result.getTimestamp("created_at").toLocalDateTime());
+                list.add(user);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
     }
 }
