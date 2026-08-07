@@ -74,4 +74,24 @@ public class userDAOImplementation implements userDAO{
         }
         return list;
     }
+
+    @Override
+    public void updateUser(User user){
+        String sql = "UPDATE user SET user_name = ?, email = ? WHERE user_id = ?";
+        try(Connection con = databaseManager.getConnection();
+            PreparedStatement pstm = con.prepareStatement(sql)
+        ){
+            pstm.setString(1, user.getUserName());
+            pstm.setString(2, user.getEmail());
+            pstm.setInt(3, user.getId());
+            int rowsAffected = pstm.executeUpdate();
+
+            if(rowsAffected == 0){
+                System.out.println("No user found with id: " + user.getId());
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
