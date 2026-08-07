@@ -94,4 +94,19 @@ public class userDAOImplementation implements userDAO{
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void deleteUser(int id){
+        String sql = "DELETE FROM user where user_id = ?";
+        try(
+            Connection con = databaseManager.getConnection(); //used to establish the connection
+            PreparedStatement pstm = con.prepareStatement(sql) //preparedStatement is used to pass the sql statement in the connection
+        ){
+            pstm.setInt(1, id);
+            pstm.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
