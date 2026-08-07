@@ -1,7 +1,6 @@
 package com.nocde.movie_reservation_system.controller;
 
 import com.nocde.movie_reservation_system.model.User;
-import com.nocde.movie_reservation_system.controller.databaseManager;
 
 import java.sql.*;
 import java.util.*;
