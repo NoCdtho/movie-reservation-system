@@ -1,4 +1,4 @@
-package com.nocde.movie_reservation_system.controller;
+package com.nocde.movie_reservation_system.dataAccessLayer;
 
 /* This is a database utility class used to handle the database connection. This ensures
     the application uses single connection configuration.

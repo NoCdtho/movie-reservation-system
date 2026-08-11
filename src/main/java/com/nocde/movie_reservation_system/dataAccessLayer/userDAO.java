@@ -1,4 +1,4 @@
-package com.nocde.movie_reservation_system.controller;
+package com.nocde.movie_reservation_system.dataAccessLayer;
 
 import java.util.List;
 import com.nocde.movie_reservation_system.model.User;
