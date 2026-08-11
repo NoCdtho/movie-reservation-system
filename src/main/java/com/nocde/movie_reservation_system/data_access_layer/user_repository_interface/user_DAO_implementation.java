@@ -1,11 +1,12 @@
-package com.nocde.movie_reservation_system.dataAccessLayer;
+package com.nocde.movie_reservation_system.data_access_layer.user_repository_interface;
 
+import com.nocde.movie_reservation_system.data_access_layer.databaseManager;
 import com.nocde.movie_reservation_system.model.User;
 
 import java.sql.*;
 import java.util.*;
 
-public class userDAOImplementation implements userDAO{
+public class user_DAO_implementation implements user_DAO{
     @Override
     public void addUser(User user){
         String sql = "INSERTS INTO users (user_name, email) VALUES (?, ?)";
