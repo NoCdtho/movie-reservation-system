@@ -78,6 +78,29 @@ public class booking {
     public String getBookingReference(){
         return bookingReference;
     }
+
+    // SETTERS
+    public void setShowTimeId(showTime showTimeId){
+        this.showTimeId=showTimeId;
+    }
+    public void setUserId(User userId){
+        this.userId=userId;
+    }
+    public void setbookingTime(LocalDateTime bookingTime){
+        this.bookingTime=bookingTime;
+    }
+    public void setStatus(bookingStatus status){
+        this.status = status;
+    }
+    public void setseatId(seat seatId){
+        this.seatId = seatId;
+    }
+    public void setBookingId(Integer bookingId){
+        this.bookingId=bookingId;
+    }
+    public void setBookingReference(String bookingReference){
+        this.bookingReference = bookingReference;
+    }
 }
 
 enum bookingStatus {
