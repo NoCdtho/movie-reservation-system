@@ -20,8 +20,8 @@ import java.time.LocalDateTime;
 )
 
 public class booking {
-    @ManyToOne(fetch = FetchType.LAZY) //enable them to only send data when they are called
-    @JoinColumn(name = "user_id", nullable = false) //used to specify foreign key column that connects other columns in a relationship
+    @ManyToOne(fetch = FetchType.LAZY) //enable them to only send data when they are called used to specify foreign key column that connects other columns in a relationship
+    @JoinColumn(name = "user_id", nullable = false) 
     private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY) //same only send data when showtime is called
@@ -57,6 +57,26 @@ public class booking {
         this.seatId = seatId;
         this.bookingId = bookingId;
         this.bookingReference = bookingReference;
+    }
+
+    // GETTERS
+    public showTime getShowTime(){
+        return showTimeId;
+    }
+    public LocalDateTime getDateTime(){
+        return bookingTime;
+    }
+    public bookingStatus getBookingStatus(){
+        return status;
+    } 
+    public seat getseatId(){
+        return seatId;
+    }
+    public Integer getBookingId(){
+        return bookingId;
+    }
+    public String getBookingReference(){
+        return bookingReference;
     }
 }
 
