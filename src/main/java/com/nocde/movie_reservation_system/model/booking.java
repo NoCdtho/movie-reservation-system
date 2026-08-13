@@ -1,14 +1,23 @@
 package com.nocde.movie_reservation_system.model;
 
+// Table annotation is used specify the database table name and 
+// details that a java class maps.
+
+
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity //used to map the class as database table map
 
-// Table annotation is used specify the database table name and details that a java class maps.
-@Table(name = "booking", uniqueConstraints = {
-    @UniqueConstraint(name = "unique_showtime_seat", columnNames = {"showtime_id", "seat_id"})
-})
+@Table(
+    name = "booking", 
+    uniqueConstraints = {
+        @UniqueConstraint(
+            name = "unique_showtime_seat", 
+            columnNames = {"showtime_id", "seat_id"}
+        )
+    }
+)
 
 public class booking {
     @ManyToOne(fetch = FetchType.LAZY) //enable them to only send data when they are called
