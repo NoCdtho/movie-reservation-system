@@ -1,3 +1,8 @@
+/*
+This files is used to create the users data access layer function to 
+interact with the database with the user object that are being created.
+*/
+
 package com.nocde.movie_reservation_system.data_access_layer.user_repository_interface;
 
 import java.util.List;

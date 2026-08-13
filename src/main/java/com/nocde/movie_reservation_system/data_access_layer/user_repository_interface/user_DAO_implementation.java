@@ -1,3 +1,8 @@
+/*
+This files uses user_DAO interface and implements each functions
+*/
+
+
 package com.nocde.movie_reservation_system.data_access_layer.user_repository_interface;
 
 import com.nocde.movie_reservation_system.data_access_layer.databaseManager;
@@ -9,7 +14,7 @@ import java.util.*;
 public class user_DAO_implementation implements user_DAO{
     @Override
     public void addUser(User user){
-        String sql = "INSERTS INTO users (user_name, email) VALUES (?, ?)";
+        String sql = "INSERT INTO users (user_name, email) VALUES (?, ?)";
         try(
             Connection connection = databaseManager.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
