@@ -60,6 +60,9 @@ public class booking {
     }
 
     // GETTERS
+    public User getUserId(){
+        return userId;
+    }
     public showTime getShowTime(){
         return showTimeId;
     }
