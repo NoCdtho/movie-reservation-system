@@ -51,7 +51,7 @@ public class User {
     }
 
     // getters
-    public Integer getId(){
+    public Integer getUserId(){
         return userId;
     }
 
