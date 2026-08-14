@@ -33,7 +33,7 @@ public class booking {
 
     @Enumerated(EnumType.STRING) //tells the application to save java enums into the database
     @Column(name = "status", nullable = false, columnDefinition = "ENUM('CONFIRMED', 'CANCELLED', 'WAITING') DEFAULT 'WAITING'")
-    private bookingStatus status = bookingStatus.WAITING;
+    private bookingStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seat_id", nullable = false)
@@ -63,7 +63,7 @@ public class booking {
     public User getUserId(){
         return userId;
     }
-    public showTime getShowTime(){
+    public showTime getShowTimeId(){
         return showTimeId;
     }
     public LocalDateTime getDateTime(){
@@ -72,7 +72,7 @@ public class booking {
     public bookingStatus getBookingStatus(){
         return status;
     } 
-    public seat getseatId(){
+    public seat getSeatId(){
         return seatId;
     }
     public Integer getBookingId(){
@@ -104,10 +104,11 @@ public class booking {
     public void setBookingReference(String bookingReference){
         this.bookingReference = bookingReference;
     }
-}
 
-enum bookingStatus {
+    public enum bookingStatus {
     CONFIRMED,
     CANCELLED,
     WAITING
-} 
+    } 
+}
+

@@ -1,9 +1,8 @@
+package com.nocde.movie_reservation_system.data_access_layer.user_repository_interface;
+
 /*
 This files uses user_DAO interface and implements each functions
 */
-
-
-package com.nocde.movie_reservation_system.data_access_layer.user_repository_interface;
 
 import com.nocde.movie_reservation_system.data_access_layer.databaseManager;
 import com.nocde.movie_reservation_system.model.User;
@@ -88,11 +87,11 @@ public class user_DAO_implementation implements user_DAO{
         ){
             pstm.setString(1, user.getUserName());
             pstm.setString(2, user.getEmail());
-            pstm.setInt(3, user.getId());
+            pstm.setInt(3, user.getUserId());
             int rowsAffected = pstm.executeUpdate();
 
             if(rowsAffected == 0){
-                System.out.println("No user found with id: " + user.getId());
+                System.out.println("No user found with id: " + user.getUserId());
             }
         }
         catch(SQLException e){

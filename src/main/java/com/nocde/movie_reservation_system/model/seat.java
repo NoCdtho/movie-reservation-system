@@ -32,12 +32,19 @@ public class seat {
     public Integer getSeatId(){
         return seatId;
     }
-
     public String getseatRow(){
         return seatRow;
     }
-
     public Integer getseatNumber(){
         return seatNumber;
+    }
+    public void setSeatId(Integer seatId){
+        this.seatId = seatId;
+    }
+    public void setSeatRow(String seatRow){
+        this.seatRow = seatRow;
+    }
+    public void setSeatNumber(Integer seatNumber){
+        this.seatNumber = seatNumber;
     }
 }

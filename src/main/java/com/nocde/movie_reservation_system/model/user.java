@@ -45,24 +45,23 @@ public class User {
     // Empty Constructors
     public User(){}
     
-    public User(String userName, String email){
+    public User(Integer userId, String userName, String email, LocalDateTime createdTime){
+        this.userId = userId;
         this.userName = userName;
         this.email = email;
+        this.createdTime = createdTime;
     }
 
     // getters
     public Integer getUserId(){
         return userId;
     }
-
     public String getUserName(){
         return userName;
     }
-
     public String getEmail(){
         return email;
     }
-
     public LocalDateTime getCreatedTime(){
         return createdTime;
     }
