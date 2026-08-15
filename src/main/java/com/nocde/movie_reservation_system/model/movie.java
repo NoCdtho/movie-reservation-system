@@ -54,4 +54,21 @@ public class movie {
     public LocalDate getReleaseDate() {
         return releaseDate;
     }  
+
+    // SETTERS
+    public void setId(Integer movieId){
+        this.movieId = movieId;
+    }
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public void setDescription(String description){
+        this.description = description;
+    }
+    public void setDurationMins(Integer durationMins){
+        this.durationMins = durationMins;
+    }
+    public void setReleaseDate(LocalDate releaseDate){
+        this.releaseDate= releaseDate;
+    }
 }
