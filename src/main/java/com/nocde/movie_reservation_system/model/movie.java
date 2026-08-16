@@ -25,7 +25,7 @@ public class movie {
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
-    movie(){}
+    public movie(){}
 
     public movie(Integer movieId, String title, String description, Integer durationMins, LocalDate releaseDate) {
         this.movieId = movieId;
