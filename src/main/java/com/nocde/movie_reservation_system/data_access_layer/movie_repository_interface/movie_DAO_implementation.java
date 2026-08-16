@@ -58,6 +58,27 @@ public class movie_DAO_implementation implements movie_DAO{
 
     public List<movie> getAllMovie(){
         List<movie> m = new ArrayList<>();
+        movie movie = null;
+        String SQL = "SELECT * FROM movie";
+        
+        try(
+            Connection con = databaseManager.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+            ResultSet result = preparedStatement.executeQuery(SQL)
+        ){
+            while(result.next()){
+                movie  = new movie();
+                movie.setDescription(result.getString("description"));
+                movie.setDurationMins(result.getInt("duration_mins"));
+                Date date = result.getDate("release_date");//java.sql
+                LocalDate localdate = date.toLocalDate();
+                movie.setReleaseDate(localdate);
+                m.add(movie);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        } 
         return m;
     }
 
