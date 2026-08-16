@@ -83,11 +83,34 @@ public class movie_DAO_implementation implements movie_DAO{
     }
 
     public void updateMovie(movie movie){
-
+        String SQL = "UPDATE movie SET title = ?, description = ?, duration_mins = ?, release_date = ?";
+        try(
+            Connection connection = databaseManager.getConnection();
+            PreparedStatement statement = connection.prepareStatement(SQL)
+        ){
+            statement.setString(1, movie.getTitle());
+            statement.setString(2, movie.getDescription());
+            statement.setInt(3, movie.getDuration());
+            statement.setDate(4, Date.valueOf(movie.getReleaseDate()));
+            statement.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public void deleteMovie(int id){
-
+        String SQL = "DELETE FROM movie WHERE movie_id = ?";
+        try(
+            Connection connection = databaseManager.getConnection();
+            PreparedStatement statement = connection.prepareStatement(SQL)
+        ){
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }   
     }
 
 }
