@@ -20,9 +20,9 @@ public class movie_DAO_implementation implements movie_DAO{
             prep.setString(2, movie.getDescription());
             prep.setInt(3, movie.getDuration());
 
-            // convert the releaseDate of type LocalDate (java.time.data) into Date (java.sql.time)
-            LocalDate localdate = movie.getReleaseDate();
-            Date date = Date.valueOf(localdate);
+            // convert the releaseDate of type LocalDate (java.time.date) into Date (java.sql.time)
+            LocalDate localdate = movie.getReleaseDate(); //java.time
+            Date date = Date.valueOf(localdate); //java.sql
             prep.setDate(4, date);
 
             prep.executeUpdate();
@@ -34,6 +34,25 @@ public class movie_DAO_implementation implements movie_DAO{
 
     public movie getMovieById(int id){
         movie m = null;
+        String SQL = "SELECT * FROM movie where movie_id = ?";
+        try(
+            Connection con = databaseManager.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+        ){
+            preparedStatement.setInt(1, id);
+            ResultSet result = preparedStatement.executeQuery();
+            if(result.next()){
+                m = new movie();
+                m.setDescription(result.getString("description"));
+                m.setDurationMins(result.getInt("duration_mins"));
+                Date date = result.getDate("release_date");//java.sql
+                LocalDate localdate = date.toLocalDate();
+                m.setReleaseDate(localdate);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
         return m;
     }
 
@@ -49,4 +68,5 @@ public class movie_DAO_implementation implements movie_DAO{
     public void deleteMovie(int id){
 
     }
+
 }
