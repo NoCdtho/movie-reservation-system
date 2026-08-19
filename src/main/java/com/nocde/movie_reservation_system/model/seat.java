@@ -29,6 +29,7 @@ public class seat {
         this.seatNumber = seatNumber;
     }
 
+    // Getters 
     public Integer getSeatId(){
         return seatId;
     }
@@ -38,6 +39,8 @@ public class seat {
     public Integer getseatNumber(){
         return seatNumber;
     }
+
+    // Setters
     public void setSeatId(Integer seatId){
         this.seatId = seatId;
     }
