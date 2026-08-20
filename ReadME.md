@@ -12,44 +12,44 @@ This is a movie reservation E2E system.
     annotationProcessor 'org.projectlombok:lombok'
 
 ## file structure:
-src/main/java
-│
-└── com.example.moviereservation
-    │
-    ├── controller
-    │     ├── MovieController
-    │     ├── ShowtimeController
-    │     └── BookingController
-    │
-    ├── service
-    │     ├── MovieService
-    │     ├── ShowtimeService
-    │     └── BookingService
-    │
-    ├── repository
-    │     ├── MovieRepository
-    │     ├── ShowtimeRepository
-    │     ├── UserRepository
-    │     └── BookingRepository
-    │
-    └── entity
-          ├── Movie
-          ├── Showtime
-          ├── User
-          └── Booking
+     src/main/java
+     │
+     └── com.example.moviereservation
+     │
+     ├── controller
+     │     ├── MovieController
+     │     ├── ShowtimeController
+     │     └── BookingController
+     │
+     ├── service
+     │     ├── MovieService
+     │     ├── ShowtimeService
+     │     └── BookingService
+     │
+     ├── repository
+     │     ├── MovieRepository
+     │     ├── ShowtimeRepository
+     │     ├── UserRepository
+     │     └── BookingRepository
+     │
+     └── entity
+               ├── Movie
+               ├── Showtime
+               ├── User
+               └── Booking
 
 ## Data Flow:
-HTTP request
-     ↓
-Controller
-     ↓
-Service
-     ↓
-Repository
-     ↓
-JPA / Hibernate
-     ↓
-Database
+     HTTP request
+          ↓
+     Controller
+          ↓
+     Service
+          ↓
+     Repository
+          ↓
+     JPA / Hibernate
+          ↓
+     Database
 
 ## Java models for the entities are:
     booking
