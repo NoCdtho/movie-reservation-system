@@ -9,7 +9,8 @@ import java.util.Optional;
 
 @Repository
 public interface seatRepository extends JpaRepository<seat, Integer>{
-    //find seat in a spefic row
+
+    //find seats in a spefic row
     List<seat> findBySeatRow(String seatRow);
 
     //  find specific row using seat number and seat row
