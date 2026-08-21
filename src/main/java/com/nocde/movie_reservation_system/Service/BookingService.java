@@ -1,6 +1,8 @@
 package com.nocde.movie_reservation_system.Service;
-import com.nocde.movie_reservation_system.repository.bookingRepository;
+
 import org.springframework.stereotype.Service;
+
+import com.nocde.movie_reservation_system.repository.bookingRepository;
 import com.nocde.movie_reservation_system.model.booking;
 import com.nocde.movie_reservation_system.model.User;
 import com.nocde.movie_reservation_system.model.showTime;
