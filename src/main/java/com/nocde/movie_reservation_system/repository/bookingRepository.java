@@ -9,7 +9,7 @@ import  com.nocde.movie_reservation_system.model.seat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.*;
 
 @Repository
 
@@ -28,6 +28,6 @@ public interface bookingRepository extends JpaRepository<booking, Integer> {
     // Check if a specific seat is already booked for a specific showtime
     boolean existsByShowTimeIdAndSeatId(showTime showTimeId, seat seatId);
     
-    //Efficient lookup using just the user IDs
-    List<booking> findByUserId_Id(Integer userId);
+    // Find a particular booking by the booking ID
+    booking findByBookingId(Integer bookingId);
 }
