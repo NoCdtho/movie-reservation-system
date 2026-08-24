@@ -15,19 +15,15 @@ public class MovieUpdateRequest {
 
     @NotBlank(message = "Movie name is required")
     @Size(max = 100, message = "Movie name cannot exceed 100 characters")
-    private String movieName;
+    private String title;
 
     @Size(max = 1000, message = "Description cannot exceed 1000 characters")
     private String description;
 
     @NotNull(message = "Duration is required")
-    private Integer duration;
+    private Integer durationMins;
 
     @NotNull(message = "Release date is required")
     @PastOrPresent(message = "Release date cannot be in the future")
     private LocalDate releaseDate;
-
-    @NotBlank(message = "Genre is required")
-    private String genre;
-
 }
