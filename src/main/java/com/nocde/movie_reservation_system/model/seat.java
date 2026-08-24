@@ -8,7 +8,7 @@ import jakarta.persistence.*;
     @UniqueConstraint(name = "seat_row", columnNames = {"seat_row", "seat_number"})
 })
 
-public class seat {
+public class Seat{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "seat_id", nullable = false)
@@ -21,9 +21,9 @@ public class seat {
     private Integer seatNumber;
 
 
-    seat(){}
+    Seat(){}
 
-    seat(Integer seatId, String seatRow, Integer seatNumber){
+    Seat(Integer seatId, String seatRow, Integer seatNumber){
         this.seatId = seatId;
         this.seatRow = seatRow;
         this.seatNumber = seatNumber;

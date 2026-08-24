@@ -1,6 +1,6 @@
 package com.nocde.movie_reservation_system.repository.movie_repository_interface;
 
-import com.nocde.movie_reservation_system.model.movie;
+import com.nocde.movie_reservation_system.model.Movie;
 import com.nocde.movie_reservation_system.repository.databaseManager;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.time.*;
 
 public class movie_DAO_implementation implements movie_DAO{
 
-    public void addMovie(movie movie){
+    public void addMovie(Movie movie){
         String SQL = "INSERT INTO movie (title, description, duration_mins, release_date) values (?, ?, ?, ?)"; 
         try(
             Connection con = databaseManager.getConnection();
@@ -32,8 +32,8 @@ public class movie_DAO_implementation implements movie_DAO{
         }
     }
 
-    public movie getMovieById(int id){
-        movie m = null;
+    public Movie getMovieById(int id){
+        Movie m = null;
         String SQL = "SELECT * FROM movie where movie_id = ?";
         try(
             Connection con = databaseManager.getConnection();
@@ -42,7 +42,7 @@ public class movie_DAO_implementation implements movie_DAO{
             preparedStatement.setInt(1, id);
             ResultSet result = preparedStatement.executeQuery();
             if(result.next()){
-                m = new movie();
+                m = new Movie();
                 m.setDescription(result.getString("description"));
                 m.setDurationMins(result.getInt("duration_mins"));
                 Date date = result.getDate("release_date");//java.sql
@@ -56,9 +56,9 @@ public class movie_DAO_implementation implements movie_DAO{
         return m;
     }
 
-    public List<movie> getAllMovie(){
-        List<movie> m = new ArrayList<>();
-        movie movie = null;
+    public List<Movie> getAllMovie(){
+        List<Movie> m = new ArrayList<>();
+        Movie movie = null;
         String SQL = "SELECT * FROM movie";
         
         try(
@@ -67,7 +67,7 @@ public class movie_DAO_implementation implements movie_DAO{
             ResultSet result = preparedStatement.executeQuery(SQL)
         ){
             while(result.next()){
-                movie  = new movie();
+                movie  = new Movie();
                 movie.setDescription(result.getString("description"));
                 movie.setDurationMins(result.getInt("duration_mins"));
                 Date date = result.getDate("release_date");//java.sql
@@ -82,7 +82,7 @@ public class movie_DAO_implementation implements movie_DAO{
         return m;
     }
 
-    public void updateMovie(movie movie){
+    public void updateMovie(Movie movie){
         String SQL = "UPDATE movie SET title = ?, description = ?, duration_mins = ?, release_date = ?";
         try(
             Connection connection = databaseManager.getConnection();

@@ -19,14 +19,14 @@ import java.time.LocalDateTime;
     }
 )
 
-public class booking {
+public class Booking {
     @ManyToOne(fetch = FetchType.LAZY) //enable them to only send data when they are called used to specify foreign key column that connects other columns in a relationship
     @JoinColumn(name = "user_id", nullable = false)
     private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY) //same only send data when showtime is called, specifies a foreign key
     @JoinColumn(name = "showtime_id", nullable = false) //same 
-    private showTime showTimeId;
+    private Showtime showTimeId;
 
     @Column(name = "booking_time", insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime bookingTime;
@@ -37,7 +37,7 @@ public class booking {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seat_id", nullable = false)
-    private seat seatId;
+    private Seat seatId;
     
     @Id //specifies the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // automatically generates a new unique sequential number for the primary key when a new row is inserted.
@@ -47,9 +47,9 @@ public class booking {
     @Column(name = "booking_reference", nullable = false, length = 50)
     private String bookingReference;
 
-    public booking(){}
+    public Booking(){}
 
-    public booking(User userId, showTime showTimeId, LocalDateTime bookingTime, bookingStatus status, seat seatId, Integer bookingId, String bookingReference){
+    public Booking(User userId, Showtime showTimeId, LocalDateTime bookingTime, bookingStatus status, Seat seatId, Integer bookingId, String bookingReference){
         this.userId = userId;
         this.showTimeId = showTimeId;
         this.bookingTime = bookingTime;
@@ -63,7 +63,7 @@ public class booking {
     public User getUserId(){
         return userId;
     }
-    public showTime getShowTimeId(){
+    public Showtime getShowTimeId(){
         return showTimeId;
     }
     public LocalDateTime getDateTime(){
@@ -72,7 +72,7 @@ public class booking {
     public bookingStatus getBookingStatus(){
         return status;
     } 
-    public seat getSeatId(){
+    public Seat getSeatId(){
         return seatId;
     }
     public Integer getBookingId(){
@@ -83,7 +83,7 @@ public class booking {
     }
 
     // SETTERS
-    public void setShowTimeId(showTime showTimeId){
+    public void setShowTimeId(Showtime showTimeId){
         this.showTimeId=showTimeId;
     }
     public void setUserId(User userId){
@@ -95,7 +95,7 @@ public class booking {
     public void setStatus(bookingStatus status){
         this.status = status;
     }
-    public void setseatId(seat seatId){
+    public void setseatId(Seat seatId){
         this.seatId = seatId;
     }
     public void setBookingId(Integer bookingId){

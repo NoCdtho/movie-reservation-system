@@ -1,4 +1,4 @@
-package com.nocde.movie_reservation_system.Service;
+package com.nocde.movie_reservation_system.service;
 
 import java.util.List;
 

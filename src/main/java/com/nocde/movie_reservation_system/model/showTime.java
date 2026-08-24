@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Table(name = "showtime")
 
-public class showTime {
+public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name  = "showtime_id", nullable = false)
@@ -15,7 +15,7 @@ public class showTime {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id", nullable = false)
-    private movie movieId;
+    private Movie movieId;
 
     @Column(name = "start_time", nullable = false)
     private LocalDateTime startTime;
@@ -26,9 +26,9 @@ public class showTime {
     @Column(name = "price", nullable = false, precision = 8, scale = 2)
     private BigDecimal price;
 
-    public showTime(){}
+    public Showtime(){}
     
-    public showTime(Integer showTimeId, movie movieId, LocalDateTime startTime, LocalDateTime endTime, BigDecimal price) {
+    public Showtime(Integer showTimeId, Movie movieId, LocalDateTime startTime, LocalDateTime endTime, BigDecimal price) {
         this.showTimeId = showTimeId;
         this.movieId = movieId;
         this.startTime = startTime;
@@ -40,7 +40,7 @@ public class showTime {
         return showTimeId;
     }
 
-    public movie getMovieId() {
+    public Movie getMovieId() {
         return movieId;
     }
 

@@ -7,7 +7,7 @@ import java.time.*;
 
 @Table(name = "movie")
 
-public class movie {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movie_id")
@@ -25,9 +25,9 @@ public class movie {
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
-    public movie(){}
+    public Movie(){}
 
-    public movie(Integer movieId, String title, String description, Integer durationMins, LocalDate releaseDate) {
+    public Movie(Integer movieId, String title, String description, Integer durationMins, LocalDate releaseDate) {
         this.movieId = movieId;
         this.title = title;
         this.title = title;
