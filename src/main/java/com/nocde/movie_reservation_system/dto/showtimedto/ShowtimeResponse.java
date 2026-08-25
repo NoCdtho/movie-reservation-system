@@ -10,5 +10,5 @@ public class ShowtimeResponse {
     private Integer showtimeId;
     private Integer movieId;
     private LocalDateTime startTime;
-
+    private String movieName;
 }
