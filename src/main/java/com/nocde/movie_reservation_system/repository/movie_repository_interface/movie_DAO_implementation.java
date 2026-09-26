@@ -1,7 +1,7 @@
 package com.nocde.movie_reservation_system.repository.movie_repository_interface;
 
 import com.nocde.movie_reservation_system.model.Movie;
-import com.nocde.movie_reservation_system.repository.databaseManager;
+import com.nocde.movie_reservation_system.databaseManager;
 
 import java.util.List;
 import java.util.ArrayList;

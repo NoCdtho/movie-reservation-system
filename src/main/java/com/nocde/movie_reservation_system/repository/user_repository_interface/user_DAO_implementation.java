@@ -1,7 +1,7 @@
 package com.nocde.movie_reservation_system.repository.user_repository_interface;
 
 import com.nocde.movie_reservation_system.model.User;
-import com.nocde.movie_reservation_system.repository.databaseManager;
+import com.nocde.movie_reservation_system.databaseManager;
 
 import java.sql.*;
 import java.util.*;
