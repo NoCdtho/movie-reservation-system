@@ -3,7 +3,6 @@ package com.nocde.movie_reservation_system.model;
 // Table annotation is used specify the database table name and 
 // details that a java class maps.
 
-
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
