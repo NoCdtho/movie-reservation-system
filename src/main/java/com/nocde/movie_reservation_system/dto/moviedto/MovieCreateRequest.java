@@ -2,7 +2,6 @@ package com.nocde.movie_reservation_system.dto.moviedto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +22,5 @@ public class MovieCreateRequest {
     private Integer durationMins;
 
     @NotNull(message = "Release date is required")
-    @PastOrPresent(message = "Release date cannot be future")
     private LocalDate releaseDate;
-
 }
